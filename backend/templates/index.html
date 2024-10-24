@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation App</title>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            height: 100vh;
+        }
+        #map {
+            height: 100%;
+            width: 70%;
+        }
+        #sidebar {
+            width: 30%;
+            padding: 10px;
+            background-color: #f9f9f9;
+            overflow-y: auto;
+            border-left: 1px solid #ddd;
+        }
+        .form-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        input[type="text"], select {
+            padding: 10px;
+            margin: 10px;
+            width: calc(100% - 40px);
+            max-width: 350px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #directions {
+            margin-top: 20px;
+        }
+        #energy-savings {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        #directions-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #directions-list li {
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        #directions-list li:hover {
+            background-color: #e0e0e0;
+        }
+        .back-button {
+            margin: 20px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #f44336;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #d32f2f;
+        }
+        #legend {
+            background: #fff;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        #legend img {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        #route-selection {
+            padding: 8px;
+            font-size: 14px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        #loading-spinner {
+            display: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <header>
+        <h1>Navigation App</h1>
+    </header>
+    <main>
+        <div id="map"></div>
+        <div id="sidebar">
+            <div class="form-container">
+                <input id="origin-input" type="text" placeholder="Enter origin">
+                <input id="destination-input" type="text" placeholder="Enter destination">
+                <select id="mode">
+                    <option value="driving">Driving</option>
+                    <option value="walking">Walking</option>
+                    <option value="bicycling">Bicycling</option>
+                    <option value="transit">Transit</option>
+                    <option value="green">Green Mode</option>
+                </select>
+                <button id="calculate-button">Calculate Route</button>
+                <button id="start-route-button">Start Route</button>
+                <button id="back-button" class="back-button">Back</button>
+            </div>
+            <!---div id="directions"></div---->
+            <div id="energy-savings"></div>
+            <!---ul id="directions-list"></ul---->
+            <div id="route-container">
+            <select id="route-selection" style="display: 10px;"></select>
+            <select id="green-route-selection" style="display: none;"></select>
+            </div>
+            <div id="directions-container">
+                <div id="directions"></div>
+                <ul id="directions-list"></ul>
+            </div>
+            <div id="loading-spinner" style="display: none;">Loading...</div>
+            <div id="directions-list"></div>
+            <div id="route-summary"></div>
+        </div>
+    </main>
+    <!-- Load Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBee5iW8Glv1HqoZLl_s6nqN9TNCpmeoqA&libraries=places&callback=initMap"></script>
+</body>
+</html>

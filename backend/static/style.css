@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+#map {
+    height: 100%;
+    width: 70%;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#sidebar {
+    width: 30%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    border-left: 1px solid #ddd;
+}
+
+.form-container {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+input[type="text"] {
+    padding: 8px;
+    margin: 5px;
+    width: calc(100% - 20px);
+    max-width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+select {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#directions {
+    margin-top: 20px;
+}
+
+#directions-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#directions-list li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#directions-list li.active {
+    background-color: #d0f0c0;
+}
+
+#energy-savings {
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#energy-savings-info {
+    font-size: 16px;
+}
+
+/* Add icons for modes */
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}

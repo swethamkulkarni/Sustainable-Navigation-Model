@@ -160,7 +160,7 @@ start_lat, start_lon = 40.7128, -74.0060
 end_lat, end_lon = 40.7614, -73.9776  
 
 
-api_key = '41e8bea6b216bd2ac0f8a004edd790f9'
+api_key = 'YOUR-API-KEY'
 optimal_mode, distance, duration = suggest_optimal_mode(start_lat, start_lon, end_lat, end_lon, api_key)
 print(f"Optimal mode: {optimal_mode}")
 print(f"Estimated distance: {distance:.2f} km")

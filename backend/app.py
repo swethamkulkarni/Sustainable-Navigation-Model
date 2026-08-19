@@ -93,8 +93,11 @@ def score_route_with_sr(route, weather_start, weather_end):
     # Adjust based on weather conditions (e.g., reduce cycling score if it's rainy)
     if weather_start and 'rain' in weather_start['weather'][0]['description'].lower():
         for mode, _, _, _ in route:
-            if mode == 'bicycle':
-                score *= 0.5  # Penalize cycling score in rainy weather
+            if rain:
+               if mode == 'bicycle':
+                   score *= 1.5
+               elif mode == 'walk':
+                   score *= 1.2
  
     return score
  

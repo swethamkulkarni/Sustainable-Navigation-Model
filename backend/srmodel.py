@@ -17,7 +17,7 @@ cycle_data = pd.read_csv('data/cycle_data.csv')
 logging.debug(f"eBus Data Columns: {ebus_data.columns.tolist()}")
 logging.debug(f"Cycle Data Columns: {cycle_data.columns.tolist()}")
 
-# Ensure duration is in float32 format only for cycle data
+
 cycle_data['Total duration (ms)'] = cycle_data['Total duration (ms)'].astype('float32')
 
 # Preprocess data

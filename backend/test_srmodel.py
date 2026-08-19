@@ -4,8 +4,7 @@ from srmodel import est_gp, calculate_sustainability_score, suggest_optimal_mode
 
 class TestSymbolicRegressionModel(unittest.TestCase):
     
-    def setUp(self):
-        # Set up any initial data if necessary 
+    def setUp(self): 
         print("Setting up test case...")
     
     def test_model_predict(self):
@@ -57,7 +56,6 @@ class TestSymbolicRegressionModel(unittest.TestCase):
             suggest_optimal_mode(invalid_lat, invalid_lon, end_lat, end_lon, api_key)
     
     def tearDown(self):
-        # Clean up after each test if necessary
         print("Cleaning up after test case...")
 
 if __name__ == '__main__':

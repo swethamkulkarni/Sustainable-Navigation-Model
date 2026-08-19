@@ -17,7 +17,7 @@ model = joblib.load('sustainable_navigation_model.joblib')
 SEARCH_RADIUS = 1  # Max distance to search for nearby eBus stops (in km)
 CARBON_FOOTPRINT = {'walk': 0, 'bicycle': 0, 'e-bus': 0.082, 'eco-cab': 0.14}
 WEATHER_API_KEY = 'YOUR-API-KEY'  # Replace with your weather API key
-CYCLE_API_URL = 'https://api.tfl.gov.uk/BikePoint?app_id=ad685628863948f586cb0f3b22c37778'
+CYCLE_API_URL = 'https://api.tfl.gov.uk/BikePoint?app_id=YOUR-API-KEY'
  
 # Load eBus data
 ebus_data = pd.read_excel('data/ebus_data.xlsx')

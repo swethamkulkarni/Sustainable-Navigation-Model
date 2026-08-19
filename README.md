@@ -23,8 +23,6 @@ Sustainable-Navigation-Model/
 ├── package.json # (Optional) Node tooling / UI
 └── README.md # This file
 
-yaml
-Copy code
 
 ---
 
